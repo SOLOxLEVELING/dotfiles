@@ -1,0 +1,92 @@
+/* ~/.config/rofi/themes/current.rasi */
+
+* {
+    /* YOUR PALETTE - KEPT EXACTLY SAME */
+    bg: #1e1e2eF2;        /* Dark Blue with transparency */
+    bg-alt: #181825;      /* Darker Blue for input */
+    fg: #cdd6f4;          /* White Text */
+    muted: #6c7086;       /* Grey Text */
+    accent: #89b4fa;      /* Blue Accent */
+
+    /* Universal Font */
+    font: "JetBrainsMono Nerd Font Bold 12";
+    
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    /* Centered Floating Window */
+    location: center;
+    width: 750px;             /* WIDER for dev work */
+    y-offset: -50px;          /* Slightly higher for better eye level */
+    
+    background-color: @bg;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 12px;
+    
+    /* Enable transparency if your compositor supports it */
+    transparency: "real";
+}
+
+mainbox {
+    padding: 24px;
+    children: [ inputbar, listview ];
+}
+
+/* --- THE SEARCH BAR --- */
+inputbar {
+    background-color: @bg-alt;
+    border-radius: 10px;
+    padding: 12px 16px;
+    children: [ prompt, entry ];
+    margin: 0 0 16px 0;      /* Space between input and list */
+}
+
+prompt {
+    text-color: @accent;
+    padding: 0 12px 0 0;     /* Space between icon and text */
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search applications...";
+    placeholder-color: @muted;
+}
+
+/* --- THE LIST VIEW --- */
+listview {
+    lines: 8;                /* See more items at once */
+    columns: 1;
+    scrollbar: false;
+    fixed-height: false;
+    spacing: 4px;            /* Space between list items */
+}
+
+element {
+    padding: 10px 16px;
+    border-radius: 8px;
+    spacing: 12px;           /* Space between icon and text */
+}
+
+element normal active {
+    text-color: @accent;
+}
+
+element selected normal, element selected active {
+    background-color: @accent;
+    text-color: #1e1e2e;     /* Dark text on active selection */
+}
+
+element-icon {
+    size: 24px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}

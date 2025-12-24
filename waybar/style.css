@@ -1,0 +1,116 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: transparent; /* Essential for floating look */
+    color: @text;
+}
+
+/* --- THE MODULES --- */
+/* This makes every module look like a pill */
+#workspaces,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#network,
+#custom-power {
+    background-color: @base;
+    padding: 0px 15px;
+    margin: 0px 0px;
+    border-radius: 10px;
+    border: 2px solid @surface1;
+    color: @text;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* --- WORKSPACES ISLAND --- */
+#workspaces {
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @overlay0;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: @blue;
+}
+
+#workspaces button:hover {
+    color: @sky;
+    background: @surface0;
+    box-shadow: inherit;
+}
+
+/* --- CLOCK ISLAND --- */
+#clock {
+    color: @mauve;
+    background-color: @base;
+}
+
+/* --- HARDWARE ISLANDS --- */
+/* We color code them slightly for readability */
+
+#pulseaudio {
+    color: @teal;
+    margin-right: 5px;
+}
+
+#memory {
+    color: @peach;
+    margin-right: 5px;
+}
+
+#cpu {
+    color: @red;
+    margin-right: 5px;
+}
+
+#network {
+    color: @lavender;
+    padding-right: 18px; /* Extra space for the icon */
+    margin-right: 5px;
+}
+
+#battery {
+    color: @green;
+    margin-right: 5px;
+}
+
+#battery.charging {
+    color: @base;
+    background-color: @green;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @red;
+    color: @base;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-power {
+    background-color: @red;
+    color: @base;
+    padding: 0 15px;
+    margin-left: 10px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @text;
+        color: @red;
+    }
+}

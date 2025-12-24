@@ -1,0 +1,19 @@
+/* ~/.config/rofi/config.rasi */
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    
+    /* The format of the list items */
+    drun-display-format: "{name}";
+    
+    /* Disable the default "drun:" text and replace it with search icon */
+    display-drun: "";
+    display-run: "";
+    display-window: "";
+    
+    /* Vim-like bindings for dev speed */
+    /* kb-row-up: "Up,Control+k"; */
+    /* kb-row-down: "Down,Control+j"; */
+}
+
+@theme "themes/current"
