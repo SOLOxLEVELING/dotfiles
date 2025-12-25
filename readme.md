@@ -1,4 +1,4 @@
-# 🌌 Omarchy Dotfiles
+# 🌌 My Arch Dotfiles
 
 ![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 ![Hyprland](https://img.shields.io/badge/Hyprland-2d3436?style=for-the-badge&logo=hyprland&logoColor=00b894)
@@ -83,7 +83,7 @@ sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-emoji
 # Extras
 sudo pacman -S hyprlock hypridle
 
-2. Deployment
+### 2. Deployment
 
 Clone this repository directly into your config directory:
 
@@ -96,7 +96,7 @@ git clone [https://github.com/SOLOxLEVELING/dotfiles.git](https://github.com/SOL
 # Make scripts executable
 chmod +x ~/.config/waybar/launch.sh
 
-3. Finalize
+### 3. Finalize
 
 Reboot or log out, then select Hyprland at the login screen.
 
@@ -116,7 +116,7 @@ Reboot or log out, then select Hyprland at the login screen.
 ├── rofi/                  # Launcher theme
 └── dunst/                 # Notification styling
 
-🤝 Credits
+### 🤝 Credits
 
     Hyprland Community for the amazing compositor.
 
