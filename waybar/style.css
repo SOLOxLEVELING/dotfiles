@@ -20,14 +20,15 @@ window#waybar {
 #cpu,
 #battery,
 #network,
-#custom-power {
+#custom-power,
+#taskbar {
     background-color: @base;
     padding: 0px 15px;
     margin: 0px 0px;
     border-radius: 10px;
     border: 2px solid @surface1;
     color: @text;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* --- WORKSPACES ISLAND --- */
@@ -113,4 +114,26 @@ window#waybar {
         background-color: @text;
         color: @red;
     }
+}
+
+/* --- TASKBAR ISLAND --- */
+#taskbar {
+    padding: 0px 5px;
+    margin-left: 10px; /* Add space between Workspaces and Taskbar */
+}
+
+#taskbar button {
+    padding: 0px 5px;
+    border-radius: 5px;
+    color: @overlay0;
+}
+
+#taskbar button.active {
+    background-color: @surface0;
+    color: @blue; /* Makes the active app icon blue */
+}
+
+#taskbar button:hover {
+    background-color: @surface1;
+    color: @text;
 }
