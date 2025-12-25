@@ -72,7 +72,7 @@ Ensure you have the required packages installed on Arch Linux:
 
 ```bash
 # Core components
-sudo pacman -S hyprland waybar dunst rofi-wayland kitty starship
+sudo pacman -S hyprland waybar dunst rofi-wayland kitty starship hyprpaper
 
 # Utilities
 sudo pacman -S grim slurp swappy cliphist wl-clipboard
@@ -83,9 +83,12 @@ sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-emoji
 # Extras
 sudo pacman -S hyprlock hypridle
 
+```
 ### 2. Deployment
 
 Clone this repository directly into your config directory:
+
+```bash
 
 # Backup existing config if necessary
 mv ~/.config ~/.config.bak
@@ -96,9 +99,12 @@ git clone [https://github.com/SOLOxLEVELING/dotfiles.git](https://github.com/SOL
 # Make scripts executable
 chmod +x ~/.config/waybar/launch.sh
 
+```
 ### 3. Finalize
 
 Reboot or log out, then select Hyprland at the login screen.
+
+```bash
 
 📂 Structure
 
@@ -115,6 +121,8 @@ Reboot or log out, then select Hyprland at the login screen.
 ├── kitty/                 # Terminal settings
 ├── rofi/                  # Launcher theme
 └── dunst/                 # Notification styling
+
+```
 
 ### 🤝 Credits
 
