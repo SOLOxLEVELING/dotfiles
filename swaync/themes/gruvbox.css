@@ -1,18 +1,19 @@
 /* Swaync Theme - Gruvbox */
+/* Clean theme with solid backgrounds */
 
 @define-color bg #282828;
 @define-color bg-alt #3c3836;
 @define-color fg #ebdbb2;
 @define-color fg-muted #928374;
 @define-color accent #d79921;
-@define-color accent-alt #b8bb26;
 @define-color urgent #cc241d;
-@define-color success #98971a;
 
+/* Control Center Panel */
 .control-center {
-    background: alpha(@bg, 0.9);
+    background: @bg;
     border: 2px solid @accent;
     border-radius: 16px;
+    margin: 10px;
     padding: 12px;
 }
 
@@ -20,60 +21,30 @@
     background: transparent;
 }
 
-.notification-row {
-    outline: none;
-}
-
-.notification {
-    background: @bg-alt;
-    border: 1px solid alpha(@accent, 0.3);
-    border-radius: 12px;
-    margin: 6px 0;
-}
-
-.notification-content {
-    padding: 12px;
-}
-
-.notification-default-action:hover,
-.notification-action:hover {
-    background: alpha(@accent, 0.2);
-}
-
-.close-button {
-    background: @urgent;
-    color: @bg;
-    border-radius: 50%;
-    min-width: 24px;
-    min-height: 24px;
-}
-
-.summary {
-    color: @fg;
-    font-weight: bold;
-}
-
-.body {
-    color: @fg-muted;
-}
-
-.time {
-    color: @fg-muted;
-    font-size: 11px;
-}
-
-.widget-label {
+.widget-title {
     color: @accent;
     font-weight: bold;
-    font-size: 16px;
-    margin: 8px 12px;
+    margin: 8px;
+}
+
+.widget-title>button {
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 8px;
+    padding: 4px 12px;
+    border: none;
+}
+
+.widget-title>button:hover {
+    background: @accent;
+    color: @bg;
 }
 
 .widget-dnd {
     background: @bg-alt;
-    border-radius: 12px;
-    padding: 8px 16px;
-    margin: 8px 0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin: 4px 8px;
 }
 
 .widget-dnd>switch {
@@ -90,39 +61,50 @@
     border-radius: 50%;
 }
 
-.widget-mpris {
-    background: @bg-alt;
-    border-radius: 12px;
-    padding: 12px;
-    margin: 8px 0;
+.notification-row {
+    outline: none;
+    margin: 4px 0;
 }
 
-.widget-mpris-title {
+.notification-row .notification-background {
+    background: transparent;
+    padding: 6px;
+}
+
+.notification-row .notification-background .notification {
+    background: @bg;
+    border: 1px solid @accent;
+    border-radius: 12px;
+}
+
+.notification-content {
+    padding: 10px;
+}
+
+.close-button {
+    background: @urgent;
+    color: @bg;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.summary {
     color: @fg;
     font-weight: bold;
 }
 
-.widget-mpris-subtitle {
+.body {
     color: @fg-muted;
 }
 
-.widget-mpris button:hover {
-    background: alpha(@accent, 0.2);
-    color: @accent;
+.time {
+    color: @fg-muted;
+    font-size: 10px;
 }
 
-.floating-notifications {
-    background: transparent;
-}
-
-.floating-notifications .notification-row {
-    margin: 8px;
-}
-
-.floating-notifications .notification {
-    background: alpha(@bg, 0.95);
+.floating-notifications .notification-row .notification-background .notification {
+    background: @bg;
     border: 2px solid @accent;
     border-radius: 12px;
-    margin: 0;
-    padding: 0;
 }
