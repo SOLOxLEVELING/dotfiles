@@ -111,8 +111,18 @@
     color: @accent;
 }
 
+.floating-notifications {
+    background: transparent;
+}
+
+.floating-notifications .notification-row {
+    margin: 8px;
+}
+
 .floating-notifications .notification {
     background: alpha(@bg, 0.95);
     border: 2px solid @accent;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    margin: 0;
+    padding: 0;
 }

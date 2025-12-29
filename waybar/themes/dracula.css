@@ -1,0 +1,33 @@
+/* Dracula Theme for Waybar */
+@define-color base #282a36;
+@define-color mantle #21222c;
+@define-color crust #191a21;
+@define-color surface0 #44475a;
+@define-color surface1 #4d5066;
+@define-color text #f8f8f2;
+@define-color subtext0 #6272a4;
+@define-color blue #8be9fd;
+@define-color lavender #bd93f9;
+@define-color sapphire #8be9fd;
+@define-color sky #8be9fd;
+@define-color teal #8be9fd;
+@define-color green #50fa7b;
+@define-color yellow #f1fa8c;
+@define-color peach #ffb86c;
+@define-color maroon #ff5555;
+@define-color red #ff5555;
+@define-color mauve #bd93f9;
+@define-color pink #ff79c6;
+@define-color flamingo #ff79c6;
+@define-color rosewater #ff79c6;
+
+/* Theme Variables */
+@define-color bg-primary alpha(@base, 0.9);
+@define-color bg-module @surface0;
+@define-color accent @mauve;
+@define-color accent-alt @pink;
+@define-color text-primary @text;
+@define-color text-secondary @subtext0;
+@define-color warning @yellow;
+@define-color critical @red;
+@define-color success @green;

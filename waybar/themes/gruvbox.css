@@ -1,0 +1,33 @@
+/* Gruvbox Theme for Waybar */
+@define-color base #282828;
+@define-color mantle #1d2021;
+@define-color crust #1d2021;
+@define-color surface0 #3c3836;
+@define-color surface1 #504945;
+@define-color text #ebdbb2;
+@define-color subtext0 #a89984;
+@define-color blue #83a598;
+@define-color lavender #d3869b;
+@define-color sapphire #83a598;
+@define-color sky #83a598;
+@define-color teal #8ec07c;
+@define-color green #b8bb26;
+@define-color yellow #fabd2f;
+@define-color peach #fe8019;
+@define-color maroon #fb4934;
+@define-color red #cc241d;
+@define-color mauve #d3869b;
+@define-color pink #d3869b;
+@define-color flamingo #fe8019;
+@define-color rosewater #fe8019;
+
+/* Theme Variables */
+@define-color bg-primary alpha(@base, 0.9);
+@define-color bg-module @surface0;
+@define-color accent @yellow;
+@define-color accent-alt @green;
+@define-color text-primary @text;
+@define-color text-secondary @subtext0;
+@define-color warning @peach;
+@define-color critical @red;
+@define-color success @green;

@@ -1,22 +1,18 @@
 /* Swaync Theme - Catppuccin Mocha */
 
-/* Color Variables */
 @define-color bg #1e1e2e;
 @define-color bg-alt #313244;
 @define-color fg #cdd6f4;
 @define-color fg-muted #6c7086;
 @define-color accent #89b4fa;
-@define-color accent-alt #cba6f7;
 @define-color urgent #f38ba8;
-@define-color success #a6e3a1;
 
-/* ═══════════════════════════════════════════
-   CONTROL CENTER
-   ═══════════════════════════════════════════ */
+/* Control Center Panel */
 .control-center {
-    background: alpha(@bg, 0.9);
+    background: alpha(@bg, 0.95);
     border: 2px solid @accent;
     border-radius: 16px;
+    margin: 10px;
     padding: 12px;
 }
 
@@ -24,87 +20,33 @@
     background: transparent;
 }
 
-/* ═══════════════════════════════════════════
-   NOTIFICATIONS
-   ═══════════════════════════════════════════ */
-.notification-row {
-    outline: none;
-}
-
-.notification {
-    background: @bg-alt;
-    border: 1px solid alpha(@accent, 0.3);
-    border-radius: 12px;
-    margin: 6px 0;
-    padding: 0;
-}
-
-.notification-content {
-    padding: 12px;
-}
-
-.notification-default-action,
-.notification-action {
+/* Widget Title */
+.widget-title {
     background: transparent;
-    border: none;
-    border-radius: 8px;
-    padding: 8px;
-    margin: 4px;
-}
-
-.notification-default-action:hover,
-.notification-action:hover {
-    background: alpha(@accent, 0.2);
-}
-
-.close-button {
-    background: @urgent;
-    color: @bg;
-    border-radius: 50%;
-    padding: 4px;
-    margin: 8px;
-    min-width: 24px;
-    min-height: 24px;
-}
-
-.close-button:hover {
-    background: lighter(@urgent);
-}
-
-/* ═══════════════════════════════════════════
-   NOTIFICATION TEXT
-   ═══════════════════════════════════════════ */
-.summary {
-    color: @fg;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.body {
-    color: @fg-muted;
-    font-size: 12px;
-}
-
-.time {
-    color: @fg-muted;
-    font-size: 11px;
-}
-
-/* ═══════════════════════════════════════════
-   WIDGETS
-   ═══════════════════════════════════════════ */
-.widget-label {
     color: @accent;
     font-weight: bold;
-    font-size: 16px;
-    margin: 8px 12px;
+    margin: 8px;
 }
 
+.widget-title>button {
+    background: @bg-alt;
+    color: @fg;
+    border-radius: 8px;
+    padding: 4px 12px;
+    border: none;
+}
+
+.widget-title>button:hover {
+    background: @accent;
+    color: @bg;
+}
+
+/* DND Toggle */
 .widget-dnd {
     background: @bg-alt;
-    border-radius: 12px;
-    padding: 8px 16px;
-    margin: 8px 0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin: 4px 8px;
 }
 
 .widget-dnd>switch {
@@ -121,53 +63,81 @@
     border-radius: 50%;
 }
 
-/* ═══════════════════════════════════════════
-   MPRIS MEDIA PLAYER
-   ═══════════════════════════════════════════ */
-.widget-mpris {
+/* Notification in Control Center */
+.notification-row {
+    outline: none;
+    margin: 4px 0;
+}
+
+.notification {
     background: @bg-alt;
+    border: 1px solid alpha(@accent, 0.3);
     border-radius: 12px;
-    padding: 12px;
-    margin: 8px 0;
+    margin: 4px;
 }
 
-.widget-mpris-player {
-    padding: 8px;
+.notification-content {
+    padding: 10px;
 }
 
-.widget-mpris-title {
+.close-button {
+    background: @urgent;
+    color: @bg;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.summary {
     color: @fg;
     font-weight: bold;
-    font-size: 14px;
 }
 
-.widget-mpris-subtitle {
+.body {
     color: @fg-muted;
-    font-size: 12px;
 }
 
-.widget-mpris button {
+.time {
+    color: @fg-muted;
+    font-size: 10px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FLOATING NOTIFICATIONS - This is the key fix!
+   The window itself needs to be transparent and not stretch
+   ══════════════════════════════════════════════════════════════ */
+
+.blank-window {
     background: transparent;
-    border: none;
-    color: @fg;
-    border-radius: 8px;
-    padding: 6px;
 }
 
-.widget-mpris button:hover {
-    background: alpha(@accent, 0.2);
-    color: @accent;
+.floating-notifications.background {
+    background: transparent;
 }
 
-/* ═══════════════════════════════════════════
-   POPUP NOTIFICATION
-   ═══════════════════════════════════════════ */
 .floating-notifications {
     background: transparent;
+}
+
+.floating-notifications>* {
+    background: transparent;
+}
+
+.floating-notifications.top.right {
+    background: transparent;
+}
+
+box.floating-notifications {
+    background: transparent;
+}
+
+.floating-notifications .notification-row {
+    background: transparent;
+    margin: 8px;
 }
 
 .floating-notifications .notification {
     background: alpha(@bg, 0.95);
     border: 2px solid @accent;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
 }

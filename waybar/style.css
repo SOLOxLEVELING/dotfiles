@@ -1,139 +1,160 @@
-@import "colors.css";
+/* Waybar - Clean Minimal Style */
+@import "theme.css";
 
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-weight: bold;
     font-size: 14px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    background-color: transparent; /* Essential for floating look */
-    color: @text;
+    background: transparent;
+    color: @text-primary;
 }
 
-/* --- THE MODULES --- */
-/* This makes every module look like a pill */
+/* ═══════════════════════════════════════════
+   FLOATING ISLANDS - Border Only (no shadow)
+   ═══════════════════════════════════════════ */
+#left-island,
+#center-island,
+#right-island {
+    background: @bg-primary;
+    border-radius: 14px;
+    border: 1px solid alpha(@accent, 0.4);
+    padding: 4px 12px;
+    margin: 4px 6px;
+}
+
+/* ═══════════════════════════════════════════
+   ALL MODULES
+   ═══════════════════════════════════════════ */
 #workspaces,
+#taskbar,
+#cpu,
+#memory,
 #clock,
 #pulseaudio,
-#memory,
-#cpu,
-#battery,
 #network,
-#custom-power,
-#taskbar {
-    background-color: @base;
-    padding: 0px 15px;
-    margin: 0px 0px;
+#battery,
+#custom-power {
+    padding: 4px 10px;
+    margin: 2px 4px;
     border-radius: 10px;
-    border: 2px solid @surface1;
-    color: @text;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* --- WORKSPACES ISLAND --- */
-#workspaces {
-    padding: 0px 5px;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    color: @overlay0;
     background: transparent;
+    color: @text-primary;
 }
 
-#workspaces button.active {
-    color: @blue;
+/* ═══════════════════════════════════════════
+   WORKSPACES - Dot Style
+   ═══════════════════════════════════════════ */
+#workspaces button {
+    padding: 4px 8px;
+    margin: 2px 2px;
+    border-radius: 50%;
+    background: transparent;
+    color: @text-secondary;
+    border: none;
+    min-width: 20px;
+    font-size: 12px;
 }
 
 #workspaces button:hover {
-    color: @sky;
-    background: @surface0;
-    box-shadow: inherit;
+    color: @accent;
 }
 
-/* --- CLOCK ISLAND --- */
+#workspaces button.active {
+    color: @accent;
+    text-shadow: 0 0 8px @accent;
+}
+
+#workspaces button.urgent {
+    color: @critical;
+}
+
+/* ═══════════════════════════════════════════
+   TASKBAR
+   ═══════════════════════════════════════════ */
+#taskbar {
+    padding: 0 8px;
+}
+
+#taskbar button {
+    padding: 2px 6px;
+    margin: 2px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+}
+
+#taskbar button:hover {
+    background: alpha(@accent, 0.2);
+}
+
+#taskbar button.active {
+    background: alpha(@accent, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   CLOCK - Center Focus
+   ═══════════════════════════════════════════ */
 #clock {
-    color: @mauve;
-    background-color: @base;
+    color: @text-primary;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 4px 16px;
 }
 
-/* --- HARDWARE ISLANDS --- */
-/* We color code them slightly for readability */
-
-#pulseaudio {
-    color: @teal;
-    margin-right: 5px;
+/* ═══════════════════════════════════════════
+   SYSTEM STATS - Subtle Colors
+   ═══════════════════════════════════════════ */
+#cpu {
+    color: @blue;
 }
 
 #memory {
-    color: @peach;
-    margin-right: 5px;
+    color: @mauve;
 }
 
-#cpu {
-    color: @red;
-    margin-right: 5px;
+#pulseaudio {
+    color: @yellow;
+}
+
+#pulseaudio.muted {
+    color: @text-secondary;
 }
 
 #network {
-    color: @lavender;
-    padding-right: 18px; /* Extra space for the icon */
-    margin-right: 5px;
+    color: @teal;
+}
+
+#network.disconnected {
+    color: @text-secondary;
 }
 
 #battery {
     color: @green;
-    margin-right: 5px;
-}
-
-#battery.charging {
-    color: @base;
-    background-color: @green;
 }
 
 #battery.warning:not(.charging) {
-    background-color: @red;
-    color: @base;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    color: @warning;
 }
 
+#battery.critical:not(.charging) {
+    color: @critical;
+}
+
+/* ═══════════════════════════════════════════
+   POWER
+   ═══════════════════════════════════════════ */
 #custom-power {
-    background-color: @red;
-    color: @base;
-    padding: 0 15px;
-    margin-left: 10px;
+    color: @red;
+    padding: 4px 8px;
+    font-size: 14px;
 }
 
-@keyframes blink {
-    to {
-        background-color: @text;
-        color: @red;
-    }
-}
-
-/* --- TASKBAR ISLAND --- */
-#taskbar {
-    padding: 0px 5px;
-    margin-left: 10px; /* Add space between Workspaces and Taskbar */
-}
-
-#taskbar button {
-    padding: 0px 5px;
-    border-radius: 5px;
-    color: @overlay0;
-}
-
-#taskbar button.active {
-    background-color: @surface0;
-    color: @blue; /* Makes the active app icon blue */
-}
-
-#taskbar button:hover {
-    background-color: @surface1;
-    color: @text;
+#custom-power:hover {
+    background: alpha(@red, 0.2);
+    border-radius: 8px;
 }

@@ -164,14 +164,20 @@
 }
 
 /* ═══════════════════════════════════════════
-   POPUP NOTIFICATION
+   POPUP NOTIFICATION (floating)
    ═══════════════════════════════════════════ */
 .floating-notifications {
     background: transparent;
 }
 
+.floating-notifications .notification-row {
+    margin: 8px;
+}
+
 .floating-notifications .notification {
     background: alpha(@bg, 0.95);
     border: 2px solid @accent;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    border-radius: 12px;
+    margin: 0;
+    padding: 0;
 }

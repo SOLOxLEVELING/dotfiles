@@ -1,0 +1,33 @@
+/* Nord Theme for Waybar */
+@define-color base #2e3440;
+@define-color mantle #2e3440;
+@define-color crust #242933;
+@define-color surface0 #3b4252;
+@define-color surface1 #434c5e;
+@define-color text #eceff4;
+@define-color subtext0 #d8dee9;
+@define-color blue #81a1c1;
+@define-color lavender #b48ead;
+@define-color sapphire #88c0d0;
+@define-color sky #88c0d0;
+@define-color teal #8fbcbb;
+@define-color green #a3be8c;
+@define-color yellow #ebcb8b;
+@define-color peach #d08770;
+@define-color maroon #bf616a;
+@define-color red #bf616a;
+@define-color mauve #b48ead;
+@define-color pink #b48ead;
+@define-color flamingo #d08770;
+@define-color rosewater #d08770;
+
+/* Theme Variables */
+@define-color bg-primary alpha(@base, 0.9);
+@define-color bg-module @surface0;
+@define-color accent @sapphire;
+@define-color accent-alt @blue;
+@define-color text-primary @text;
+@define-color text-secondary @subtext0;
+@define-color warning @yellow;
+@define-color critical @red;
+@define-color success @green;

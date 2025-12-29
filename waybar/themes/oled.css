@@ -1,0 +1,33 @@
+/* OLED Dark Theme for Waybar */
+@define-color base #000000;
+@define-color mantle #000000;
+@define-color crust #000000;
+@define-color surface0 #0a0a0a;
+@define-color surface1 #141414;
+@define-color text #ffffff;
+@define-color subtext0 #888888;
+@define-color blue #00ffff;
+@define-color lavender #00ffff;
+@define-color sapphire #00ccff;
+@define-color sky #00ffff;
+@define-color teal #00ffcc;
+@define-color green #00ff00;
+@define-color yellow #ffff00;
+@define-color peach #ff9900;
+@define-color maroon #ff6600;
+@define-color red #ff0000;
+@define-color mauve #ff00ff;
+@define-color pink #ff66ff;
+@define-color flamingo #ff99ff;
+@define-color rosewater #ffccff;
+
+/* Theme Variables */
+@define-color bg-primary alpha(@base, 0.95);
+@define-color bg-module @surface0;
+@define-color accent @green;
+@define-color accent-alt @blue;
+@define-color text-primary @text;
+@define-color text-secondary @subtext0;
+@define-color warning @yellow;
+@define-color critical @red;
+@define-color success @green;

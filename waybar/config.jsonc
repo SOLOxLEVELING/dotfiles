@@ -1,87 +1,120 @@
-// -*- mode: jsonc -*-
 {
-  "layer": "top",
-  "position": "top",
-  "margin-top": 10,
-  "margin-left": 10,
-  "margin-right": 10,
-  "height": 34,
-  "spacing": 10,
-
-  "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
-  "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "memory", "cpu", "custom/power"],
-
-  // --- MODULES ---
-
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "urgent": "",
-      "active": "",
-      "default": "",
+    // Waybar - Clean Minimal Design
+    "layer": "top",
+    "position": "top",
+    "height": 44,
+    "margin-top": 10,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 0,
+    "modules-left": [
+        "group/left-island"
+    ],
+    "modules-center": [
+        "group/center-island"
+    ],
+    "modules-right": [
+        "group/right-island"
+    ],
+    "group/left-island": {
+        "orientation": "horizontal",
+        "modules": [
+            "hyprland/workspaces",
+            "wlr/taskbar"
+        ]
     },
-    "sort-by-number": true,
-  },
-
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["kitty"],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition",
+    "group/center-island": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock"
+        ]
     },
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal",
+    "group/right-island": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "pulseaudio",
+            "network",
+            "battery",
+            "custom/power"
+        ]
     },
-  },
-
-  "clock": {
-    "format": "  {:%H:%M}",
-    "format-alt": "  {:%A, %B %d, %Y}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-  },
-
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "●",
+            "2": "●",
+            "3": "●",
+            "4": "●",
+            "5": "●",
+            "active": "◉",
+            "default": "○"
+        },
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
-    "on-click": "pavucontrol",
-  },
-
-  "memory": {
-    "format": " {}%",
-    "tooltip": "Memory usage",
-    "on-click": "kitty -e btop",
-  },
-
-  "cpu": {
-    "format": " {usage}%",
-    "tooltip": "CPU usage",
-    "on-click": "kitty -e btop",
-  },
-
-  "custom/power": {
-    "format": "⏻",
-    "tooltip": "Power menu",
-    "on-click": "~/.local/bin/power-menu",
-  },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 22,
+        "icon-theme": "Papirus",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "CPU {usage}%"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "RAM {percentage}%"
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %B %d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "󰤨 {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "on-click": "nm-connection-editor"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
 }

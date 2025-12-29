@@ -1,2 +1,41 @@
-/* Swaync Style - Import Current Theme */
+/* Swaync Main Style */
 @import "themes/current.css";
+
+/* ══════════════════════════════════════════════════════════════
+   BASE STYLES FOR ALL THEMES
+   This fixes the floating notification background issue
+   ══════════════════════════════════════════════════════════════ */
+
+/* The main notification window background must be transparent */
+.blank-window {
+    background: transparent;
+}
+
+window.notification-window {
+    background: transparent;
+}
+
+box.notifications {
+    background: transparent;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.floating-notifications.background {
+    background: transparent;
+}
+
+.floating-notifications>* {
+    background: transparent;
+}
+
+.floating-notifications .notification-row {
+    background: transparent;
+}
+
+/* Ensure no padding/margin causes the box to expand */
+.floating-notifications .notification-row>* {
+    background: transparent;
+}
