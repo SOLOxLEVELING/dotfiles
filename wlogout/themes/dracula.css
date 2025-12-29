@@ -1,0 +1,79 @@
+/* Wlogout Style - Dracula Theme */
+@define-color bg-overlay rgba(40, 42, 54, 0.85);
+@define-color button-bg rgba(68, 71, 90, 0.9);
+@define-color button-hover rgba(189, 147, 249, 0.2);
+@define-color text-color #f8f8f2;
+@define-color accent #bd93f9;
+
+window {
+    background-color: @bg-overlay;
+}
+
+button {
+    background-color: @button-bg;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    margin: 20px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+}
+
+button:hover {
+    background-color: @button-hover;
+    border-color: @accent;
+    box-shadow: 0 0 20px rgba(189, 147, 249, 0.4);
+}
+
+button:focus {
+    background-color: @accent;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#lock:hover {
+    background-image: image(url("/usr/share/wlogout/icons/lock-hover.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#logout:hover {
+    background-image: image(url("/usr/share/wlogout/icons/logout-hover.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#suspend:hover {
+    background-image: image(url("/usr/share/wlogout/icons/suspend-hover.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#hibernate:hover {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate-hover.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#shutdown:hover {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+
+#reboot:hover {
+    background-image: image(url("/usr/share/wlogout/icons/reboot-hover.png"));
+}

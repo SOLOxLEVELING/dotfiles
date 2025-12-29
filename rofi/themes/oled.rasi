@@ -1,16 +1,16 @@
 /**
- * Gruvbox Rofi Theme
- * Warm, retro earthy colors
+ * OLED Dark Rofi Theme
+ * Pure black with neon accents
  */
 
 * {
-    bg:              #282828F0;
-    bg-alt:          #3c3836;
-    bg-dark:         #1d2021;
-    fg:              #ebdbb2;
-    fg-muted:        #a89984;
-    accent:          #d79921;
-    accent-alt:      #b8bb26;
+    bg:              #000000F5;
+    bg-alt:          #0a0a0a;
+    bg-dark:         #000000;
+    fg:              #ffffff;
+    fg-muted:        #666666;
+    accent:          #00ff00;
+    accent-alt:      #00ffff;
     
     background-color: transparent;
     text-color:       @fg;
@@ -36,7 +36,7 @@ mainbox {
 inputbar {
     background-color: @bg-dark;
     border:           1px solid;
-    border-color:     @bg-alt;
+    border-color:     @accent;
     border-radius:    12px;
     padding:          14px 18px;
     spacing:          14px;
@@ -86,7 +86,7 @@ element normal.normal {
 }
 
 element alternate.normal {
-    background-color: rgba(60, 56, 54, 0.5);
+    background-color: rgba(20, 20, 20, 0.8);
 }
 
 element selected.normal {

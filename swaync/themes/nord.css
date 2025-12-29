@@ -1,0 +1,118 @@
+/* Swaync Theme - Nord */
+
+@define-color bg #2e3440;
+@define-color bg-alt #3b4252;
+@define-color fg #eceff4;
+@define-color fg-muted #4c566a;
+@define-color accent #88c0d0;
+@define-color accent-alt #81a1c1;
+@define-color urgent #bf616a;
+@define-color success #a3be8c;
+
+.control-center {
+    background: alpha(@bg, 0.9);
+    border: 2px solid @accent;
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.notification {
+    background: @bg-alt;
+    border: 1px solid alpha(@accent, 0.3);
+    border-radius: 12px;
+    margin: 6px 0;
+}
+
+.notification-content {
+    padding: 12px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: alpha(@accent, 0.2);
+}
+
+.close-button {
+    background: @urgent;
+    color: @bg;
+    border-radius: 50%;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.summary {
+    color: @fg;
+    font-weight: bold;
+}
+
+.body {
+    color: @fg-muted;
+}
+
+.time {
+    color: @fg-muted;
+    font-size: 11px;
+}
+
+.widget-label {
+    color: @accent;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 12px;
+}
+
+.widget-dnd {
+    background: @bg-alt;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin: 8px 0;
+}
+
+.widget-dnd>switch {
+    background: @fg-muted;
+    border-radius: 12px;
+}
+
+.widget-dnd>switch:checked {
+    background: @accent;
+}
+
+.widget-dnd>switch slider {
+    background: @fg;
+    border-radius: 50%;
+}
+
+.widget-mpris {
+    background: @bg-alt;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+.widget-mpris-title {
+    color: @fg;
+    font-weight: bold;
+}
+
+.widget-mpris-subtitle {
+    color: @fg-muted;
+}
+
+.widget-mpris button:hover {
+    background: alpha(@accent, 0.2);
+    color: @accent;
+}
+
+.floating-notifications .notification {
+    background: alpha(@bg, 0.95);
+    border: 2px solid @accent;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}

@@ -1,16 +1,16 @@
 /**
- * Gruvbox Rofi Theme
- * Warm, retro earthy colors
+ * Nord Rofi Theme
+ * Arctic, cool colors
  */
 
 * {
-    bg:              #282828F0;
-    bg-alt:          #3c3836;
-    bg-dark:         #1d2021;
-    fg:              #ebdbb2;
-    fg-muted:        #a89984;
-    accent:          #d79921;
-    accent-alt:      #b8bb26;
+    bg:              #2e3440F0;
+    bg-alt:          #3b4252;
+    bg-dark:         #2e3440;
+    fg:              #eceff4;
+    fg-muted:        #d8dee9;
+    accent:          #88c0d0;
+    accent-alt:      #81a1c1;
     
     background-color: transparent;
     text-color:       @fg;
@@ -86,7 +86,7 @@ element normal.normal {
 }
 
 element alternate.normal {
-    background-color: rgba(60, 56, 54, 0.5);
+    background-color: rgba(59, 66, 82, 0.5);
 }
 
 element selected.normal {

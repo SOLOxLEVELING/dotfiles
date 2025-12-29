@@ -1,0 +1,119 @@
+/* Swaync Theme - Dracula */
+
+@define-color bg #282a36;
+@define-color bg-alt #44475a;
+@define-color fg #f8f8f2;
+@define-color fg-muted #6272a4;
+@define-color accent #bd93f9;
+@define-color accent-alt #ff79c6;
+@define-color urgent #ff5555;
+@define-color success #50fa7b;
+
+.control-center {
+    background: alpha(@bg, 0.9);
+    border: 2px solid @accent;
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.notification {
+    background: @bg-alt;
+    border: 1px solid alpha(@accent, 0.3);
+    border-radius: 12px;
+    margin: 6px 0;
+}
+
+.notification-content {
+    padding: 12px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: alpha(@accent, 0.2);
+}
+
+.close-button {
+    background: @urgent;
+    color: @bg;
+    border-radius: 50%;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.summary {
+    color: @fg;
+    font-weight: bold;
+}
+
+.body {
+    color: @fg-muted;
+}
+
+.time {
+    color: @fg-muted;
+    font-size: 11px;
+}
+
+.widget-label {
+    color: @accent;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 12px;
+}
+
+.widget-dnd {
+    background: @bg-alt;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin: 8px 0;
+}
+
+.widget-dnd>switch {
+    background: @fg-muted;
+    border-radius: 12px;
+}
+
+.widget-dnd>switch:checked {
+    background: @accent;
+    box-shadow: 0 0 10px @accent;
+}
+
+.widget-dnd>switch slider {
+    background: @fg;
+    border-radius: 50%;
+}
+
+.widget-mpris {
+    background: @bg-alt;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+.widget-mpris-title {
+    color: @fg;
+    font-weight: bold;
+}
+
+.widget-mpris-subtitle {
+    color: @fg-muted;
+}
+
+.widget-mpris button:hover {
+    background: alpha(@accent, 0.2);
+    color: @accent;
+}
+
+.floating-notifications .notification {
+    background: alpha(@bg, 0.95);
+    border: 2px solid @accent;
+    box-shadow: 0 0 20px rgba(189, 147, 249, 0.3);
+}

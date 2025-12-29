@@ -1,16 +1,16 @@
 /**
- * Gruvbox Rofi Theme
- * Warm, retro earthy colors
+ * Dracula Rofi Theme
+ * Dark purple vampire aesthetic
  */
 
 * {
-    bg:              #282828F0;
-    bg-alt:          #3c3836;
-    bg-dark:         #1d2021;
-    fg:              #ebdbb2;
-    fg-muted:        #a89984;
-    accent:          #d79921;
-    accent-alt:      #b8bb26;
+    bg:              #282a36F0;
+    bg-alt:          #44475a;
+    bg-dark:         #21222c;
+    fg:              #f8f8f2;
+    fg-muted:        #6272a4;
+    accent:          #bd93f9;
+    accent-alt:      #ff79c6;
     
     background-color: transparent;
     text-color:       @fg;
@@ -86,7 +86,7 @@ element normal.normal {
 }
 
 element alternate.normal {
-    background-color: rgba(60, 56, 54, 0.5);
+    background-color: rgba(68, 71, 90, 0.5);
 }
 
 element selected.normal {

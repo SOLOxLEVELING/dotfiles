@@ -1,0 +1,177 @@
+/* Swaync Theme - OLED Dark */
+
+/* Color Variables */
+@define-color bg #000000;
+@define-color bg-alt #0a0a0a;
+@define-color fg #ffffff;
+@define-color fg-muted #666666;
+@define-color accent #00ff00;
+@define-color accent-alt #00ffff;
+@define-color urgent #ff0000;
+@define-color success #00ff00;
+
+/* ═══════════════════════════════════════════
+   CONTROL CENTER
+   ═══════════════════════════════════════════ */
+.control-center {
+    background: alpha(@bg, 0.9);
+    border: 2px solid @accent;
+    border-radius: 16px;
+    padding: 12px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   NOTIFICATIONS
+   ═══════════════════════════════════════════ */
+.notification-row {
+    outline: none;
+}
+
+.notification {
+    background: @bg-alt;
+    border: 1px solid @accent;
+    border-radius: 12px;
+    margin: 6px 0;
+    padding: 0;
+}
+
+.notification-content {
+    padding: 12px;
+}
+
+.notification-default-action,
+.notification-action {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 4px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: alpha(@accent, 0.2);
+}
+
+.close-button {
+    background: @urgent;
+    color: @bg;
+    border-radius: 50%;
+    padding: 4px;
+    margin: 8px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.close-button:hover {
+    background: lighter(@urgent);
+}
+
+/* ═══════════════════════════════════════════
+   NOTIFICATION TEXT
+   ═══════════════════════════════════════════ */
+.summary {
+    color: @fg;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: @fg-muted;
+    font-size: 12px;
+}
+
+.time {
+    color: @fg-muted;
+    font-size: 11px;
+}
+
+/* ═══════════════════════════════════════════
+   WIDGETS
+   ═══════════════════════════════════════════ */
+.widget-label {
+    color: @accent;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 12px;
+    text-shadow: 0 0 10px @accent;
+}
+
+.widget-dnd {
+    background: @bg-alt;
+    border: 1px solid @accent;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin: 8px 0;
+}
+
+.widget-dnd>switch {
+    background: @fg-muted;
+    border-radius: 12px;
+}
+
+.widget-dnd>switch:checked {
+    background: @accent;
+    box-shadow: 0 0 10px @accent;
+}
+
+.widget-dnd>switch slider {
+    background: @fg;
+    border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════
+   MPRIS MEDIA PLAYER
+   ═══════════════════════════════════════════ */
+.widget-mpris {
+    background: @bg-alt;
+    border: 1px solid @accent;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+.widget-mpris-player {
+    padding: 8px;
+}
+
+.widget-mpris-title {
+    color: @fg;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.widget-mpris-subtitle {
+    color: @fg-muted;
+    font-size: 12px;
+}
+
+.widget-mpris button {
+    background: transparent;
+    border: none;
+    color: @accent;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.widget-mpris button:hover {
+    background: alpha(@accent, 0.2);
+    text-shadow: 0 0 8px @accent;
+}
+
+/* ═══════════════════════════════════════════
+   POPUP NOTIFICATION
+   ═══════════════════════════════════════════ */
+.floating-notifications {
+    background: transparent;
+}
+
+.floating-notifications .notification {
+    background: alpha(@bg, 0.95);
+    border: 2px solid @accent;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}

@@ -1,0 +1,133 @@
+# Starship Nord Theme
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](#88c0d0)\
+$os\
+$username\
+[](bg:#81a1c1 fg:#88c0d0)\
+$directory\
+[](fg:#81a1c1 bg:#bf616a)\
+$git_branch\
+$git_status\
+[](fg:#bf616a bg:#a3be8c)\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+$scala\
+[](fg:#a3be8c bg:#5e81ac)\
+$docker_context\
+[](fg:#5e81ac bg:#2e3440)\
+$time\
+[ ](fg:#2e3440)\
+"""
+
+[username]
+show_always = true
+style_user = "bg:#88c0d0 fg:#2e3440"
+style_root = "bg:#88c0d0 fg:#2e3440"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:#88c0d0"
+disabled = true
+
+[directory]
+style = "bg:#81a1c1 fg:#2e3440"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[c]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#5e81ac fg:#eceff4"
+format = '[ $symbol $context ]($style)'
+
+[elixir]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#bf616a fg:#eceff4"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#bf616a fg:#eceff4"
+format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[gradle]
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[nim]
+symbol = "󰆥 "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = " "
+style = "bg:#a3be8c fg:#2e3440"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#2e3440 fg:#eceff4"
+format = '[ ♥ $time ]($style)'
