@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Hyprland Theme Switcher - FAST VERSION
-# Switches: Hyprland, Wallpaper, Rofi, Waybar, Kitty, Starship, Wlogout, Swaync
+# Hyprland Theme Switcher - FULL VERSION
+# Switches: Hyprland, Wallpaper, Rofi, Waybar, Kitty, Starship, Wlogout, Swaync, GTK, Icons
 # Usage: theme-switcher.sh <theme-name>
 
 # Configuration paths
@@ -29,6 +29,25 @@ if [ ! -f "$THEME_FILE" ]; then
 fi
 
 echo "🎨 Switching to: $THEME_NAME"
+
+# ═══════════════════════════════════════════
+# GTK/ICON THEME MAPPING
+# ═══════════════════════════════════════════
+declare -A ACCENT_COLORS=(
+    ["catppuccin"]="blue"
+    ["oled"]="green"
+    ["nord"]="teal"
+    ["dracula"]="purple"
+    ["gruvbox"]="orange"
+)
+
+declare -A ICON_THEMES=(
+    ["catppuccin"]="Papirus-Dark"
+    ["oled"]="Papirus-Dark"
+    ["nord"]="Papirus-Dark"
+    ["dracula"]="Papirus-Dark"
+    ["gruvbox"]="Papirus-Dark"
+)
 
 # ═══════════════════════════════════════════
 # FAST PARALLEL EXECUTION
@@ -73,7 +92,19 @@ if [ -f "$SWAYNC_THEME" ]; then
     swaync-client -R &>/dev/null &
 fi
 
-# 8. Wallpaper (smooth wipe transition)
+# 8. GTK Theme (Dark mode + Accent color)
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' 2>/dev/null &
+ACCENT="${ACCENT_COLORS[$THEME_NAME]:-blue}"
+gsettings set org.gnome.desktop.interface accent-color "$ACCENT" 2>/dev/null &
+
+# 9. Icon Theme
+ICON="${ICON_THEMES[$THEME_NAME]:-Papirus-Dark}"
+gsettings set org.gnome.desktop.interface icon-theme "$ICON" 2>/dev/null &
+
+# 10. Cursor Theme (consistent)
+gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita' 2>/dev/null &
+
+# 11. Wallpaper (smooth wipe transition)
 WALLPAPER="$WALLPAPER_DIR/${THEME_NAME}.jpg"
 [ ! -f "$WALLPAPER" ] && WALLPAPER="$WALLPAPER_DIR/${THEME_NAME}.png"
 
@@ -86,10 +117,10 @@ if [ -f "$WALLPAPER" ]; then
         --transition-fps 60 &
 fi
 
-# 9. Reload Hyprland
+# 12. Reload Hyprland
 hyprctl reload &>/dev/null &
 
-# 10. Save theme state
+# 13. Save theme state
 echo "$THEME_NAME" > "$THEME_STATE_FILE"
 
 echo "✓ Done!"
