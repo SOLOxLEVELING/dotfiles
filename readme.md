@@ -11,12 +11,12 @@ A dynamic, multi-theme, and performance-oriented Hyprland setup for Arch Linux, 
 
 ## Gallery
 
-| Catppuccin | Dracula | Gruvbox |
-| :---: | :---: | :---: |
+|                  Catppuccin                   |                 Dracula                 |                 Gruvbox                 |
+| :-------------------------------------------: | :-------------------------------------: | :-------------------------------------: |
 | ![Catppuccin](hypr/wallpapers/catppuccin.jpg) | ![Dracula](hypr/wallpapers/dracula.png) | ![Gruvbox](hypr/wallpapers/gruvbox.png) |
 
-| Nord | OLED |
-| :---: | :---: |
+|               Nord                |               OLED                |
+| :-------------------------------: | :-------------------------------: |
 | ![Nord](hypr/wallpapers/nord.png) | ![OLED](hypr/wallpapers/oled.png) |
 
 ---
@@ -33,19 +33,19 @@ A dynamic, multi-theme, and performance-oriented Hyprland setup for Arch Linux, 
 
 ## Tech Stack
 
-| Component | Tool | Description |
-| --- | --- | --- |
-| **OS** | Arch Linux | The foundational operating system. |
-| **WM** | Hyprland | A dynamic tiling Wayland compositor. |
-| **Bar** | Waybar | A highly customizable Wayland bar. |
-| **Terminal** | Kitty | A fast, feature-rich, GPU-based terminal. |
-| **Shell** | Bash + Starship | A minimal, fast, and infinitely customizable prompt. |
-| **Launcher** | Rofi | A versatile application launcher and window switcher. |
-| **Notifications** | swaync | A GTK-based notification daemon with control center. |
-| **Logout Menu** | wlogout | A Wayland-based logout menu. |
-| **Lock Screen** | Hyprlock | A sleek and fast screen locker for Wayland. |
-| **Idle Daemon** | Hypridle | For screen locking and idle management. |
-| **Wallpaper** | Hyprpaper | A fast wallpaper utility for Hyprland. |
+| Component         | Tool            | Description                                           |
+| ----------------- | --------------- | ----------------------------------------------------- |
+| **OS**            | Arch Linux      | The foundational operating system.                    |
+| **WM**            | Hyprland        | A dynamic tiling Wayland compositor.                  |
+| **Bar**           | Waybar          | A highly customizable Wayland bar.                    |
+| **Terminal**      | Kitty           | A fast, feature-rich, GPU-based terminal.             |
+| **Shell**         | Bash + Starship | A minimal, fast, and infinitely customizable prompt.  |
+| **Launcher**      | Rofi            | A versatile application launcher and window switcher. |
+| **Notifications** | swaync          | A GTK-based notification daemon with control center.  |
+| **Logout Menu**   | wlogout         | A Wayland-based logout menu.                          |
+| **Lock Screen**   | Hyprlock        | A sleek and fast screen locker for Wayland.           |
+| **Idle Daemon**   | Hypridle        | For screen locking and idle management.               |
+| **Wallpaper**     | Hyprpaper       | A fast wallpaper utility for Hyprland.                |
 
 ---
 
@@ -54,6 +54,7 @@ A dynamic, multi-theme, and performance-oriented Hyprland setup for Arch Linux, 
 ### Prerequisites
 
 Ensure you have a fresh Arch Linux installation with:
+
 - A working internet connection
 - An AUR helper installed (`yay` or `paru`)
 - Base development tools: `sudo pacman -S base-devel git`
@@ -143,7 +144,22 @@ chmod +x ~/dotfiles/hypr/scripts/*.sh
 chmod +x ~/dotfiles/waybar/launch.sh
 ```
 
-### 3. Finalize
+### 3. Setup SDDM (Login Screen)
+
+#### Since SDDM themes reside in the system folder (/usr/share/sddm/themes), they cannot be symlinked. I have included a one-click installer script to set this up.
+
+```bash
+# 1. Ensure you have a profile picture at ~/.face.icon (Optional)
+# cp /home/addy/dotfiles/sddm/themes/catppuccin/icons/.face.icon ~/.face.icon
+
+# 2. Run the installer script
+~/dotfiles/sddm/install.sh
+
+# 3. Enable SDDM service
+sudo systemctl enable sddm
+```
+
+### 4. Finalize
 
 1. **Logout** from your current session
 2. **Select Hyprland** from your display manager (SDDM, GDM, etc.)
@@ -161,24 +177,24 @@ Press `Super + T` to open the theme selection menu. Choose your desired theme, a
 
 **Modifier Key**: `SUPER` (Windows Key)
 
-| Key | Action |
-| --- | --- |
-| `Super + Return` | Open Terminal (Kitty) |
-| `Super + Q` | Close Active Window |
-| `Super + M` | Exit Hyprland Session |
-| `Super + E` | Open File Manager |
-| `Super + T` or `Super + K` | **Open Theme Switcher** |
-| `Super + Alt + Space`| App Launcher (Rofi) |
-| `Super + V` | Clipboard History (Cliphist) |
-| `Super + S` | Screenshot (Select Area) |
-| `Super + Shift + S` | Screenshot (Full Screen) |
-| `Super + L` | Lock Screen |
-| `Super + F` | Open Browser |
-| `Super + Z` | Open IDE |
-| `Super + Shift + B` | Reload Waybar |
-| `Super + [0-9]` | Switch to Workspace [0-9] |
-| `Super + Shift + [0-9]`| Move Window to Workspace [0-9] |
-| `Super + Arrows` | Move Focus |
+| Key                        | Action                         |
+| -------------------------- | ------------------------------ |
+| `Super + Return`           | Open Terminal (Kitty)          |
+| `Super + Q`                | Close Active Window            |
+| `Super + M`                | Exit Hyprland Session          |
+| `Super + E`                | Open File Manager              |
+| `Super + T` or `Super + K` | **Open Theme Switcher**        |
+| `Super + Alt + Space`      | App Launcher (Rofi)            |
+| `Super + V`                | Clipboard History (Cliphist)   |
+| `Super + S`                | Screenshot (Select Area)       |
+| `Super + Shift + S`        | Screenshot (Full Screen)       |
+| `Super + L`                | Lock Screen                    |
+| `Super + F`                | Open Browser                   |
+| `Super + Z`                | Open IDE                       |
+| `Super + Shift + B`        | Reload Waybar                  |
+| `Super + [0-9]`            | Switch to Workspace [0-9]      |
+| `Super + Shift + [0-9]`    | Move Window to Workspace [0-9] |
+| `Super + Arrows`           | Move Focus                     |
 
 ---
 
@@ -238,23 +254,28 @@ dotfiles/
 ## Troubleshooting
 
 ### Notifications not working?
+
 - Ensure **swaync** is installed: `yay -S swaync`
 - Kill any dunst process: `pkill dunst`
 - Start swaync manually: `swaync &`
 
 ### Waybar not appearing?
+
 - Check if waybar is installed: `which waybar`
 - Run launch script manually: `~/.config/waybar/launch.sh`
 
 ### Theme not applying correctly?
+
 - Ensure scripts are executable: `chmod +x ~/.config/hypr/scripts/*.sh`
 - Run theme restore: `~/.config/hypr/scripts/theme-restore.sh`
 
 ### Missing icons in Waybar?
+
 - Install the Nerd Font: `sudo pacman -S ttf-jetbrains-mono-nerd`
 - Restart Waybar: `Super + Shift + B`
 
 ### Hyprpaper/Wallpaper issues?
+
 - Check hyprpaper is running: `pgrep hyprpaper`
 - Verify wallpaper path in `hypr/hyprpaper.conf`
 
