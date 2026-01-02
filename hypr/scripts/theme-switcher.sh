@@ -39,6 +39,7 @@ declare -A ACCENT_COLORS=(
     ["nord"]="teal"
     ["dracula"]="purple"
     ["gruvbox"]="orange"
+    ["cyberpunk"]="pink"
 )
 
 declare -A ICON_THEMES=(
@@ -47,6 +48,7 @@ declare -A ICON_THEMES=(
     ["nord"]="Papirus-Dark"
     ["dracula"]="Papirus-Dark"
     ["gruvbox"]="Papirus-Dark"
+    ["cyberpunk"]="Papirus-Dark"
 )
 
 # ═══════════════════════════════════════════
