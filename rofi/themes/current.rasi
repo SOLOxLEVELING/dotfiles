@@ -1,16 +1,16 @@
 /**
- * Gruvbox Rofi Theme
- * Warm, retro earthy colors
+ * Catppuccin Mocha Rofi Theme
  */
 
 * {
-    bg:              #282828F0;
-    bg-alt:          #3c3836;
-    bg-dark:         #1d2021;
-    fg:              #ebdbb2;
-    fg-muted:        #a89984;
-    accent:          #d79921;
-    accent-alt:      #b8bb26;
+    bg:              #1e1e2eF0;
+    bg-alt:          #313244;
+    bg-dark:         #181825;
+    fg:              #cdd6f4;
+    fg-muted:        #6c7086;
+    accent:          #89b4fa;
+    accent-alt:      #cba6f7;
+    green:           #a6e3a1;
     
     background-color: transparent;
     text-color:       @fg;
@@ -86,7 +86,7 @@ element normal.normal {
 }
 
 element alternate.normal {
-    background-color: rgba(60, 56, 54, 0.5);
+    background-color: rgba(49, 50, 68, 0.5);
 }
 
 element selected.normal {

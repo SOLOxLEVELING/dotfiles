@@ -80,6 +80,10 @@ fi
 STARSHIP_THEME="$HOME/.config/starship/themes/${THEME_NAME}.toml"
 [ -f "$STARSHIP_THEME" ] && ln -sf "$STARSHIP_THEME" "$HOME/.config/starship.toml"
 
+# 5.5. Ghostty theme
+GHOSTTY_THEME="$HOME/.config/ghostty/themes/${THEME_NAME}.conf"
+[ -f "$GHOSTTY_THEME" ] && ln -sf "$GHOSTTY_THEME" "$HOME/.config/ghostty/theme.conf"
+
 # 6. Wlogout theme
 WLOGOUT_THEME="$HOME/.config/wlogout/themes/${THEME_NAME}.css"
 if [ -f "$WLOGOUT_THEME" ]; then

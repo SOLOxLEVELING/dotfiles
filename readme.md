@@ -23,7 +23,7 @@ A dynamic, multi-theme, and performance-oriented Hyprland setup for Arch Linux, 
 
 ## Key Features
 
-- **Dynamic Theming**: Switch between multiple themes (`Catppuccin`, `Dracula`, `Gruvbox`, `Nord`, `OLED`) instantly using a Rofi menu. The script updates colors for Hyprland, Waybar, Kitty, Rofi, and swaync.
+- **Dynamic Theming**: Switch between multiple themes (`Catppuccin`, `Dracula`, `Gruvbox`, `Nord`, `OLED`) instantly using a Rofi menu. The script updates colors for Hyprland, Waybar, Kitty, Ghostty, Starship, Fastfetch, Rofi, and swaync.
 - **Modular Architecture**: Configurations are neatly organized into separate files for easy management of `settings`, `keybindings`, `autostart`, and more.
 - **Developer-Focused**: Pre-configured for web development with specific workspace assignments and generous terminal scrollback.
 - **Floating Aesthetics**: A modern desktop experience with a floating Waybar and styled notifications via swaync.
@@ -38,7 +38,7 @@ A dynamic, multi-theme, and performance-oriented Hyprland setup for Arch Linux, 
 | **OS**            | Arch Linux      | The foundational operating system.                    |
 | **WM**            | Hyprland        | A dynamic tiling Wayland compositor.                  |
 | **Bar**           | Waybar          | A highly customizable Wayland bar.                    |
-| **Terminal**      | Kitty           | A fast, feature-rich, GPU-based terminal.             |
+| **Terminal**      | Kitty / Ghostty | Fast, feature-rich, GPU-based terminals.              |
 | **Shell**         | Bash + Starship | A minimal, fast, and infinitely customizable prompt.  |
 | **Launcher**      | Rofi            | A versatile application launcher and window switcher. |
 | **Notifications** | swaync          | A GTK-based notification daemon with control center.  |
@@ -73,6 +73,9 @@ sudo pacman -S waybar rofi-wayland
 # Terminal & Shell
 sudo pacman -S kitty starship
 
+# Optional: Ghostty terminal (alternative to Kitty)
+# Install from AUR: yay -S ghostty
+
 # Clipboard & Screenshot utilities
 sudo pacman -S grim slurp swappy cliphist wl-clipboard
 
@@ -81,6 +84,9 @@ sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-emoji
 
 # System utilities
 sudo pacman -S playerctl brightnessctl network-manager-applet
+
+# Fastfetch (system info)
+sudo pacman -S fastfetch
 
 # File manager (optional, but referenced in keybinds)
 sudo pacman -S thunar
@@ -134,6 +140,7 @@ git clone https://github.com/SOLOxLEVELING/dotfiles.git ~/dotfiles
 ln -sf ~/dotfiles/hypr ~/.config/hypr
 ln -sf ~/dotfiles/waybar ~/.config/waybar
 ln -sf ~/dotfiles/kitty ~/.config/kitty
+ln -sf ~/dotfiles/ghostty ~/.config/ghostty
 ln -sf ~/dotfiles/rofi ~/.config/rofi
 ln -sf ~/dotfiles/swaync ~/.config/swaync
 ln -sf ~/dotfiles/wlogout ~/.config/wlogout
@@ -231,6 +238,9 @@ dotfiles/
 ├── kitty/                      # Terminal emulator
 │   ├── kitty.conf              # Terminal config
 │   └── themes/                 # Terminal color themes
+├── ghostty/                    # Alternative terminal emulator
+│   └── .config/ghostty/
+│       └── config              # Ghostty configuration
 ├── rofi/                       # Application launcher
 │   ├── config.rasi             # Rofi config
 │   └── themes/                 # Launcher themes

@@ -1,49 +1,19 @@
-# Starship Nord Theme
+# Starship Nord Theme - Minimal
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-[](#88c0d0)\
-$os\
-$username\
-[](bg:#81a1c1 fg:#88c0d0)\
-$directory\
-[](fg:#81a1c1 bg:#bf616a)\
-$git_branch\
-$git_status\
-[](fg:#bf616a bg:#a3be8c)\
-$c\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-$scala\
-[](fg:#a3be8c bg:#5e81ac)\
-$docker_context\
-[](fg:#5e81ac bg:#2e3440)\
-$time\
-[ ](fg:#2e3440)\
-"""
+add_newline = false
+format = """$directory$character"""
+palette = "nord"
+right_format = """$all"""
+command_timeout = 1000
 
-[username]
-show_always = true
-style_user = "bg:#88c0d0 fg:#2e3440"
-style_root = "bg:#88c0d0 fg:#2e3440"
-format = '[$user ]($style)'
-disabled = false
-
-[os]
-style = "bg:#88c0d0"
-disabled = true
+[character]
+vicmd_symbol = "[N] >>>"
+success_symbol = '[➜](bold green)'
 
 [directory]
-style = "bg:#81a1c1 fg:#2e3440"
-format = "[ $path ]($style)"
+style = "bold frost_blue"
+format = "[$path]($style) "
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -53,81 +23,71 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
-[c]
-symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[docker_context]
-symbol = " "
-style = "bg:#5e81ac fg:#eceff4"
-format = '[ $symbol $context ]($style)'
-
-[elixir]
-symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
 [git_branch]
-symbol = ""
-style = "bg:#bf616a fg:#eceff4"
-format = '[ $symbol $branch ]($style)'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold frost_cyan"
 
 [git_status]
-style = "bg:#bf616a fg:#eceff4"
-format = '[$all_status$ahead_behind ]($style)'
+format = '[$all_status$ahead_behind]($style) '
+style = "bold red"
+
+[aws]
+format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+disabled = false
+style = 'bold frost_blue'
+symbol = " "
 
 [golang]
+format = '[$symbol($version)]($style) '
+style = "bold frost_cyan"
 symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[gradle]
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[haskell]
-symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[java]
-symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
-symbol = ""
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[nim]
-symbol = "󰆥 "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version)]($style) '
+style = "bold green"
+symbol = " "
 
 [rust]
-symbol = ""
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
-
-[scala]
+format = '[$symbol($version)]($style) '
+style = "bold orange"
 symbol = " "
-style = "bg:#a3be8c fg:#2e3440"
-format = '[ $symbol ($version) ]($style)'
+
+[python]
+format = '[$symbol($version)]($style) '
+style = "bold yellow"
+symbol = " "
+
+[docker_context]
+disabled = true
+
+[kubernetes]
+symbol = '☸ '
+disabled = true
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#2e3440 fg:#eceff4"
-format = '[ ♥ $time ]($style)'
+style = "bold snow_storm"
+format = '[$time]($style)'
+
+[palettes.nord]
+# Polar Night
+nord0 = "#2e3440"
+nord1 = "#3b4252"
+nord2 = "#434c5e"
+nord3 = "#4c566a"
+# Snow Storm
+snow_storm = "#eceff4"
+nord5 = "#e5e9f0"
+nord6 = "#d8dee9"
+# Frost
+frost_cyan = "#88c0d0"
+frost_blue = "#81a1c1"
+frost_blue_bright = "#5e81ac"
+frost_teal = "#8fbcbb"
+# Aurora
+red = "#bf616a"
+orange = "#d08770"
+yellow = "#ebcb8b"
+green = "#a3be8c"
+purple = "#b48ead"

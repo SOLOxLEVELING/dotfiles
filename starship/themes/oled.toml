@@ -1,49 +1,19 @@
-# Starship OLED Dark Theme
+# Starship OLED Theme - Minimal
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-[](#00ff00)\
-$os\
-$username\
-[](bg:#00ffff fg:#00ff00)\
-$directory\
-[](fg:#00ffff bg:#ff00ff)\
-$git_branch\
-$git_status\
-[](fg:#ff00ff bg:#ffff00)\
-$c\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-$scala\
-[](fg:#ffff00 bg:#00ffcc)\
-$docker_context\
-[](fg:#00ffcc bg:#000000)\
-$time\
-[ ](fg:#000000)\
-"""
+add_newline = false
+format = """$directory$character"""
+palette = "oled"
+right_format = """$all"""
+command_timeout = 1000
 
-[username]
-show_always = true
-style_user = "bg:#00ff00 fg:#000000"
-style_root = "bg:#00ff00 fg:#000000"
-format = '[$user ]($style)'
-disabled = false
-
-[os]
-style = "bg:#00ff00"
-disabled = true
+[character]
+vicmd_symbol = "[N] >>>"
+success_symbol = '[➜](bold green)'
 
 [directory]
-style = "bg:#00ffff fg:#000000"
-format = "[ $path ]($style)"
+style = "bold white"
+format = "[$path]($style) "
 truncation_length = 3
 truncation_symbol = "…/"
 
@@ -53,81 +23,61 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
-[c]
-symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[docker_context]
-symbol = " "
-style = "bg:#00ffcc fg:#000000"
-format = '[ $symbol $context ]($style)'
-
-[elixir]
-symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
 [git_branch]
-symbol = ""
-style = "bg:#ff00ff fg:#000000"
-format = '[ $symbol $branch ]($style)'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold gray"
 
 [git_status]
-style = "bg:#ff00ff fg:#000000"
-format = '[$all_status$ahead_behind ]($style)'
+format = '[$all_status$ahead_behind]($style) '
+style = "bold light_gray"
+
+[aws]
+format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+disabled = false
+style = 'bold gray'
+symbol = " "
 
 [golang]
+format = '[$symbol($version)]($style) '
+style = "bold light_gray"
 symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[gradle]
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[haskell]
-symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[java]
-symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
-symbol = ""
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[nim]
-symbol = "󰆥 "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[$symbol($version)]($style) '
+style = "bold white"
+symbol = " "
 
 [rust]
-symbol = ""
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
-
-[scala]
+format = '[$symbol($version)]($style) '
+style = "bold gray"
 symbol = " "
-style = "bg:#ffff00 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+
+[python]
+format = '[$symbol($version)]($style) '
+style = "bold light_gray"
+symbol = " "
+
+[docker_context]
+disabled = true
+
+[kubernetes]
+symbol = '☸ '
+disabled = true
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#000000 fg:#00ff00"
-format = '[ ♥ $time ]($style)'
+style = "bold white"
+format = '[$time]($style)'
+
+[palettes.oled]
+# Pure black background for OLED displays
+background = "#000000"
+# Grayscale palette for minimal power consumption
+black = "#000000"
+dark_gray = "#1a1a1a"
+gray = "#808080"
+light_gray = "#b0b0b0"
+white = "#ffffff"
+# Subtle accent for important info
+accent = "#ffffff"

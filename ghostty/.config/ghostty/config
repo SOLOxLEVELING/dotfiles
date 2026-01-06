@@ -1,0 +1,199 @@
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║                   GHOSTTY - MODERN TERMINAL CONFIG                       ║
+# ║                     Optimized for Arch + Hyprland                        ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+# ===========================
+# FONT CONFIGURATION
+# ===========================
+font-family = JetBrainsMono Nerd Font
+font-size = 13
+
+# Font styles
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Italic
+font-style-bold-italic = Bold Italic
+
+# Font features (enable ligatures and stylistic sets)
+font-feature = +calt
+font-feature = +liga
+font-feature = +dlig
+
+# Fine-tune cell dimensions for perfect rendering
+adjust-cell-width = 0
+adjust-cell-height = 3
+adjust-font-baseline = 1
+
+# ===========================
+# THEME & COLORS
+# ===========================
+# Theme is loaded dynamically via theme-switcher
+# Current theme config will be symlinked here
+config-file = ~/.config/ghostty/theme.conf
+
+# Fallback if theme.conf doesn't exist
+# theme = Catppuccin Mocha
+
+# Custom cursor for better visibility
+cursor-color = #f5e0dc
+cursor-text = #1e1e2e
+
+# ===========================
+# WINDOW & AESTHETICS
+# ===========================
+# Ultra-modern glass morphism effect
+window-padding-x = 24
+window-padding-y = 20
+window-padding-balance = true
+window-padding-color = background
+
+# Remove decorations (Hyprland handles this)
+window-decoration = false
+window-theme = ghostty
+
+# Advanced transparency with blur
+background-opacity = 0.88
+background-blur = true
+
+# Unfocused window dimming for better focus
+unfocused-split-opacity = 0.75
+
+# ===========================
+# CURSOR & VISUAL EFFECTS
+# ===========================
+cursor-style = bar
+cursor-style-blink = true
+cursor-opacity = 1.0
+
+# ===========================
+# PERFORMANCE & RENDERING
+# ===========================
+# High refresh rate support
+window-vsync = true
+
+# Massive scrollback for development
+scrollback-limit = 100000
+
+# ===========================
+# SHELL INTEGRATION
+# ===========================
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
+
+# ===========================
+# CLIPBOARD & MOUSE
+# ===========================
+mouse-hide-while-typing = true
+clipboard-read = allow
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+copy-on-select = true
+cursor-click-to-move = true
+
+# Clipboard safety
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
+
+# ===========================
+# SPLITS & TABS (tmux-like built-in)
+# ===========================
+# Window split behavior
+window-inherit-working-directory = true
+window-inherit-font-size = true
+
+# ===========================
+# KEYBINDINGS - MODERN WORKFLOW
+# ===========================
+
+# ─────────────────────────────────────
+# COPY/PASTE
+# ─────────────────────────────────────
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+
+# ─────────────────────────────────────
+# FONT SIZE
+# ─────────────────────────────────────
+keybind = ctrl+equal=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+0=reset_font_size
+
+# ─────────────────────────────────────
+# SCROLLBACK NAVIGATION
+# ─────────────────────────────────────
+keybind = ctrl+shift+up=scroll_page_up
+keybind = ctrl+shift+down=scroll_page_down
+keybind = ctrl+shift+home=scroll_to_top
+keybind = ctrl+shift+end=scroll_to_bottom
+
+# Jump between prompts (shell integration required)
+keybind = ctrl+shift+z=jump_to_prompt:-1
+keybind = ctrl+shift+x=jump_to_prompt:1
+
+# ─────────────────────────────────────
+# WINDOW/TAB MANAGEMENT
+# ─────────────────────────────────────
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_surface
+
+# Tab navigation
+keybind = ctrl+tab=next_tab
+keybind = ctrl+shift+tab=previous_tab
+keybind = ctrl+shift+1=goto_tab:1
+keybind = ctrl+shift+2=goto_tab:2
+keybind = ctrl+shift+3=goto_tab:3
+keybind = ctrl+shift+4=goto_tab:4
+keybind = ctrl+shift+5=goto_tab:5
+
+# ─────────────────────────────────────
+# SPLITS (tmux-like)
+# ─────────────────────────────────────
+keybind = ctrl+shift+enter=new_split:right
+keybind = ctrl+shift+backslash=new_split:down
+
+# Navigate splits
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+k=goto_split:top
+keybind = ctrl+shift+l=goto_split:right
+
+# Resize splits
+keybind = ctrl+shift+left=resize_split:left,10
+keybind = ctrl+shift+right=resize_split:right,10
+keybind = ctrl+shift+up=resize_split:up,10
+keybind = ctrl+shift+down=resize_split:down,10
+
+# ─────────────────────────────────────
+# UTILITY
+# ─────────────────────────────────────
+keybind = ctrl+shift+r=reload_config
+keybind = ctrl+shift+f=toggle_fullscreen
+keybind = ctrl+comma=open_config
+keybind = ctrl+shift+i=inspector:toggle
+
+# ===========================
+# ADVANCED SETTINGS
+# ===========================
+confirm-close-surface = true
+auto-update = check
+link-url = true
+focus-follows-mouse = false
+
+# Quick terminal (dropdown style)
+window-save-state = always
+
+# ===========================
+# TITLE & NOTIFICATIONS
+# ===========================
+window-title-font-family = JetBrainsMono Nerd Font
+title = Ghostty
+
+# ===========================
+# LINUX-SPECIFIC
+# ===========================
+# GTK settings
+gtk-single-instance = desktop
+gtk-titlebar = false
+gtk-tabs-location = top
