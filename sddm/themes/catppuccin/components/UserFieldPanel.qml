@@ -24,7 +24,7 @@ TextField {
     background: Rectangle {
         id: userFieldBackground
 
-        color: "#ffffff"
+        color: "#1e1e2e"
         border.color: config.TextFieldHighlightColor
         border.width: 2
         radius: config.CornerRadius
