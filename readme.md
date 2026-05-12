@@ -7,6 +7,8 @@ A dynamic, multi-theme, and performance-oriented Hyprland setup for Arch Linux, 
 
 > **Note**: This rice uses **swaync** for notifications (not dunst). While dunst config is included for reference, swaync is the active notification daemon.
 
+> **Compatibility**: Updated for **Hyprland 0.55+**, **Hyprpaper 0.8+**, **SwayNC 0.12+ (GTK4)**, and **Rofi 2.0+** (Wayland merged upstream). Traditional hyprlang config format.
+
 ---
 
 ## Gallery
@@ -68,7 +70,7 @@ Ensure you have a fresh Arch Linux installation with:
 sudo pacman -S hyprland hyprpaper hyprlock hypridle hyprpolkitagent
 
 # Bar & Launcher
-sudo pacman -S waybar rofi-wayland
+sudo pacman -S waybar rofi
 
 # Terminal & Shell
 sudo pacman -S kitty starship
@@ -83,13 +85,13 @@ sudo pacman -S grim slurp swappy cliphist wl-clipboard
 sudo pacman -S ttf-jetbrains-mono-nerd noto-fonts-emoji
 
 # System utilities
-sudo pacman -S playerctl brightnessctl network-manager-applet
+sudo pacman -S playerctl brightnessctl network-manager-applet qt6ct
 
 # Fastfetch (system info)
 sudo pacman -S fastfetch
 
 # File manager (optional, but referenced in keybinds)
-sudo pacman -S thunar
+sudo pacman -S nautilus
 ```
 
 #### AUR Packages (using yay)

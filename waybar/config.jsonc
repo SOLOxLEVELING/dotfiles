@@ -12,7 +12,7 @@
 
   "group/left-island": {
     "orientation": "horizontal",
-    "modules": ["hyprland/workspaces", "wlr/taskbar"]
+    "modules": ["hyprland/workspaces", "taskbar"]
   },
   "group/center-island": {
     "orientation": "horizontal",
@@ -46,7 +46,7 @@
     },
     "persistent-workspaces": { "*": 5 }
   },
-  "wlr/taskbar": {
+  "taskbar": {
     "format": "{icon}",
     "icon-size": 22,
     "icon-theme": "Papirus",
